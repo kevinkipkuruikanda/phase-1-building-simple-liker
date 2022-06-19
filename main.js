@@ -14,7 +14,8 @@ const FULL_HEART = '♥'
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
-      let isRandomFailure = Math.random() < .2
+      const newLocal = Math.random() < .2;
+      let isRandomFailure = newLocal
       if (isRandomFailure) {
         reject("Random server error. Try again.");
       } else {
